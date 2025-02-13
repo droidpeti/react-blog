@@ -24,7 +24,7 @@ export default function Posts() {
                     <p>{post.createdAt.split("T")[0]}</p>
                 </div>
             ))}
-            {!sessionStorage.getItem("key") && <Link to={"/posts/new"}><button>Add new Post</button></Link>}
+            {sessionStorage.getItem("token") && <Link to={"/posts/new"}><button>Add new Post</button></Link>}
         </div>
     )
 }
